@@ -11,9 +11,9 @@ class AuthorsController < ApplicationController
     @author = Author.new(author_params)
     if @author.valid?
       @author.save
+      redirect_to author_path(@author)
     else
-      #redirect_to author_path(@author)
-      render 
+      render :new
   end
 
   private
